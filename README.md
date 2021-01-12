@@ -22,7 +22,7 @@ $ composer install parkejunior/spreadsheetmr
 ## Basic
 Here is a basic example of using the library:
 ```php
-use Parkejunior\SpreadSheetMR;
+use SpreadSheetMR\SpreadSheetMR;
 
 $path_to_file = "file.csv";
 $file_extension = ".csv"; // or only "csv"

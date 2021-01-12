@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+namespace SpreadSheetMR;
 
 use SimpleXLSX;
 use SimpleXLS;
