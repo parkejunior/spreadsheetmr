@@ -12,8 +12,8 @@ This library uses [`shuchkin/SimpleXLS`](https://github.com/shuchkin/simplexls) 
 
 First, you will need to install [Composer](http://getcomposer.org/). Then, run the following command:
 
-```
-composer install parkejunior/spreadsheetmr
+```bash
+$ composer install parkejunior/spreadsheetmr
 ```
 
 
@@ -21,12 +21,11 @@ composer install parkejunior/spreadsheetmr
 
 ## Basic
 Here is a basic example of using the library:
-```
-<?php
+```php
 use Parkejunior\SpreadSheetMR;
 
 $path_to_file = "file.csv";
-$file_extension = ".csv" // or only "csv"
+$file_extension = ".csv"; // or only "csv"
 $import = new SpreadSheetMR($path_to_file, $file_extension);
 $data = $import->getObject();
 
@@ -39,11 +38,9 @@ Note that the file extension is passed as a separate property from the file path
 ## Verify header and limits
 
 You can use the `verifyFile()` method by passing an array with some settings. Example:
-```
-<?php
-use Parkejunior\SpreadSheetMR;
-
+```php
 ...
+
 $import->verifyFile(array(
 	"first_title" => "name", // check if first title on header is "name"
 	"last_title" => "phone", // check if last title on header is "phone"
@@ -57,13 +54,11 @@ var_dump($data);
 ## Ignore row and columns
 
 It is also possible to ignore columns or rows using the `ignoreRow()` and `ignoreColumn()` methods by passing the index offset as a parameter. Example:
-```
-<?php
-use Parkejunior\SpreadSheetMR;
-
+```php
 ...
-$import->ignoreRow(3) // ignore 4th row
-$import->ignoreColumn(0) // ignore first column
+
+$import->ignoreRow(3); // ignore 4th row
+$import->ignoreColumn(0); // ignore first column
 $data = $import->getObject();
 
 var_dump($data);
@@ -72,12 +67,10 @@ var_dump($data);
 ## Define which row is the header
 
 You can define which line is the header by passing to the `headerIndex` property the index offset of the line. Note that when the header is defined, the `getObject ()` method returns a `stdClass` combining the header as an association to the data of each line. Example:
-```
-<?php
-use Parkejunior\SpreadSheetMR;
-
+```php
 ...
-$import->headerIndex = 0 // define first row as header
+
+$import->headerIndex = 0; // define first row as header
 $data = $import->getObject();
 
 var_dump($data);
