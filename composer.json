@@ -1,0 +1,19 @@
+{
+    "name": "parkejunior/spreadsheetmr",
+    "description": "Multiformat spreadsheet reader",
+    "require": {
+        "shuchkin/simplexlsx": "0.8.*",
+        "shuchkin/simplexls": "0.9.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick Luan",
+            "email": "patrick_luan1@hotmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "autoload": {
+        "psr-4": {"": "src/"}
+    }
+}
